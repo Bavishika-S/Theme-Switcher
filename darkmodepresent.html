@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dark Mode Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      background-color: white;
+      color: black;
+    }
+
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+
+    .title {
+      width: auto;
+      text-align: center;
+      padding: 20px;
+      background:linear-gradient(to right,rgb(175, 157, 193), rgb(225, 143, 157));
+      transition: background-color 0.4s ease;
+    }
+
+    .dark-mode .title {
+      background:linear-gradient(to right,#464648,#171722);
+    }
+
+    .nav {
+      width: 100%;
+      text-align: center;
+      background-color: lightgray;
+      padding: 10px 0;
+      transition: background-color 0.4s ease;
+    }
+
+    .nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: inherit;
+      padding: 8px 15px;
+      border-radius: 6px;
+      transition: background-color 0.4s ease;
+    }
+
+    .nav a:hover {
+      background-color: gray;
+    }
+
+    .dark-mode .nav {
+      background-color: dimgray;
+    }
+
+    .dark-mode .nav a:hover {
+      background-color: darkgray;
+    }
+
+    .section {
+      display: none;
+      padding: 40px 0;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .section-content {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 15px;
+      transition: background-color 0.5s ease;
+    }
+
+    #home .section-content {
+      background-color: rgb(218, 189, 248);
+    }
+
+    .dark-mode #home .section-content {
+      background-color: #3c3c45;
+    }
+
+    #about .section-content {
+      background-color: mistyrose;
+    }
+
+    .dark-mode #about .section-content {
+      background-color: #3B1C32;
+    }
+
+    #features .section-content {
+      background-color: rgb(189, 231, 189);
+    }
+
+    .dark-mode #features .section-content {
+      background-color: #4a0c39;
+    }
+
+    #contact .section-content {
+      background-color: rgb(163, 221, 221);
+    }
+
+    .dark-mode #contact .section-content {
+      background-color: darkslategray;
+    }
+
+    .content-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .text-content {
+      flex: 2;
+    }
+
+    .section img {
+      width: 180px;
+      height: 130px;
+      border-radius: 10px;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+
+      .section img {
+        align-self: center;
+        margin: 20px auto 0;
+      }
+    }
+
+    button {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: dodgerblue;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.4s ease;
+    }
+
+    button:hover {
+      background-color: royalblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">
+    <h1 id="modeText">Light Mode</h1>
+    <marquee  direction="right">This website has both light and dark themes!</marquee>
+  </div>
+
+  <div class="nav">
+    <a href="#" data-section="home">Home</a>
+    <a href="#" data-section="about">About</a>
+    <a href="#" data-section="features">Features</a>
+    <a href="#" data-section="contact">Contact</a>
+  </div>
+
+  <div id="home" class="section active">
+    <div class="section-content">
+      <h2>Home</h2>
+      <div class="content-wrapper">
+        <div class="text-content">
+          <p>Welcome to our simple yet functional dark mode website. This site is designed to demonstrate how light and dark themes can enhance the user experience with clean transitions and clear visuals. Whether you are a beginner in web development or someone looking for a quick template to start a personal or academic project, this website serves as a perfect starting point.</p>
+          <p>Our layout is intuitive, featuring sections such as Home, About, Features, and Contact. Navigation is smooth, and the background colors change seamlessly to match your preferred theme. This gives the website a modern touch while ensuring accessibility for all users.</p>
+          <p>Light mode offers a bright and welcoming interface, ideal for daytime viewing. Dark mode, on the other hand, is easier on the eyes during night-time usage and offers a sleek, professional aesthetic. With just a click of a button, users can toggle between both modes — no reloading or redirection required.</p>
+          <p>The images are images to bring each section to life and placed them in a visually appealing corner to avoid clutter. As you scroll through the site, you'll notice each section has its own style, color scheme, and purpose. This makes navigation more engaging and avoids monotony. Scroll down to explore more.</p>
+        </div>
+        <img src="https://plus.unsplash.com/premium_photo-1661843927331-bd6189336607?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDk4fDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D">
+      </div>
+    </div>
+  </div>
+
+  <div id="about" class="section">
+    <div class="section-content">
+      <h2>About</h2>
+      <div class="content-wrapper">
+        <div class="text-content">
+          <p>This website was built using only HTML, CSS, and JavaScript — no libraries, no external dependencies, and no frameworks. The entire goal behind this project is to make a minimal, clean, and educational structure that any beginner or hobbyist can fully understand and customize. It is structured to be simple enough to follow while still being rich in features.</p>
+          <p>All styling is done using plain CSS. We use color names instead of hex codes for easier reading and customization. The layout is responsive, meaning it works well on both desktop and mobile devices. With proper transitions and animations, even a basic website like this can feel polished.</p>
+          <p>The “About” section explains the intent, choices, and principles behind the website. We’ve used semantic HTML5 tags for better accessibility and search engine optimization. The sections are logically divided and content is arranged with readability in mind.                                                            </p>
+          <p>This template can be used for a personal portfolio,or even a product showcase.</p>
+        </div>
+        <img src="https://bing.com/th/id/OIP.Ag_It2vnUtAZlLcIQ9emlAHaEK?w=286&h=180&c=7&r=0&o=7&cb=thvnextc2&dpr=1.3&pid=1.7&rm=3" alt="About Image">
+      </div>
+    </div>
+  </div>
+
+  <div id="features" class="section">
+    <div class="section-content">
+      <h2>Features</h2>
+      <div class="content-wrapper">
+        <div class="text-content">
+          <p>This website contains several simple yet effective features that make it stand out despite being lightweight and minimal. The first major feature is the dark mode toggle, which allows users to switch between light and dark themes with a single click. It’s not just a style change; it’s implemented with smooth CSS transitions to enhance visual comfort.</p>
+          <p>Another useful feature is section-based navigation. Each section like Home, About, Features, and Contact is shown one at a time when clicked from the top navigation bar. This gives the feel of a single-page application while keeping things simple and fast.</p>
+          <p>The design includes different background colors for each section using readable and semantic CSS color names. This improves the user’s focus and also adds variety to the interface.</p>
+          <p>Responsiveness is a core part of this layout. Whether you open it on a phone, tablet, or desktop, everything adjusts smoothly without breaking. Images are placed intelligently in each section and stay within their boundaries, adding visual support without disrupting text flow.</p>
+        </div>
+        <img src="https://bing.com/th/id/OIP.ox7zxdXOarLTHsC_VvqSOAHaE7?w=264&h=180&c=7&r=0&o=7&cb=thvnextc2&dpr=1.3&pid=1.7&rm=3" alt="Features Image">
+      </div>
+    </div>
+  </div>
+
+  <div id="contact" class="section">
+    <div class="section-content">
+      <h2>Contact</h2>
+      <div class="content-wrapper">
+        <div class="text-content">
+          <p>Need help? Reach out at <strong>contact@gmail.com</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="toggleBtn">Toggle Dark Mode</button>
+
+  <script>
+    const toggleBtn = document.getElementById("toggleBtn");
+    const body = document.body;
+    const modeText = document.getElementById("modeText");
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      modeText.textContent = body.classList.contains("dark-mode") ? "Dark Mode" : "Light Mode";
+      toggleBtn.textContent = body.classList.contains("dark-mode") ? "Switch to Light Mode" : "Switch to Dark Mode";
+    });
+
+    const links = document.querySelectorAll(".nav a");
+    const sections = document.querySelectorAll(".section");
+
+    links.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = this.getAttribute("data-section");
+
+        sections.forEach(section => section.classList.remove("active"));
+        document.getElementById(target).classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
